@@ -1,22 +1,22 @@
-<!Doctype.html>
+<!Doctype html>
 <html lang="en">
-<head><link rel="stylesheet" href="style.css"></head>
-<title>THE BURGER JOINT</title>
+<head>
+    <title>THE BURGER JOINT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 <div id="header">
     <h1>THE BURGER JOINT</h1>
 </div>
-<button class = “nav-toggle” aria-label = ”toggle navigation”>☰</button>
-<div class="hamburger" onclick="toggleMenu()"></div>
-<div class="nav">
-    <div class = "nav">
+<button id="nav-toggle">☰</button>
+<nav id="nav">
     <a href="index.html">HOME</a>
     <a href="menu.html">MENU</a>
     <a href="aboutus.html">ABOUT US</a>
     <a href="careers.html">CAREERS</a>
-    </div>
+</nav>
 <div id = "banner">
-    <img src = "imgs\burger2.png" alt = "burger">
+    <img src = "imgs/burger2.png" alt = "burger">
 </div>
 <section class = "container">
     <div class = "column left">
@@ -41,11 +41,11 @@
 <div class = "specials">
     <h2>Our weekly Specials:</h2>
     <p>Grilled Cheese Patty Melt - $5.99</p>
-        <img src = "imgs\patty.webp" alt = "patty melt">
+        <img src = "imgs/patty.webp" alt = "patty melt">
     <p>Pretzel Bun Deluxe Burger - $5.99</p>
-        <img src = "imgs\pretzel.webp" alt = "pretzel burger">
+        <img src = "imgs/pretzel.webp" alt = "pretzel burger">
     <p>Mushroom Soup - $3.99</p>
-        <img src = "imgs\soup.jpg" alt = "soup">
+        <img src = "imgs/soup.jpg" alt = "soup">
     <p> </p>
     <h2>Free Refills on all Large Drinks!</h2>
 </div>
@@ -53,13 +53,12 @@
     <p>&copy; 2025 The Burger Joint</p>
 </div>
 <script>
-    function toggleMenu()
-    {
-      const navLinks = document.querySelector('.nav');
-      const hamburger = document.querySelector('.nav-toggle');
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    }
-  </script>
+  const toggleButton = document.getElementById("nav-toggle");
+const nav = document.getElementById("nav");
+
+toggleButton.addEventListener("click", function () {
+  nav.classList.toggle("show");
+});
+</script>
 </body>
 </html>
