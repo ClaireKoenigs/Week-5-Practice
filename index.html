@@ -1,0 +1,65 @@
+<!Doctype.html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css"></head>
+<title>THE BURGER JOINT</title>
+<body>
+<div id="header">
+    <h1>THE BURGER JOINT</h1>
+</div>
+<button class = “nav-toggle” aria-label = ”toggle navigation”>☰</button>
+<div class="hamburger" onclick="toggleMenu()"></div>
+<div class="nav">
+    <div class = "nav">
+    <a href="index.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="aboutus.html">ABOUT US</a>
+    <a href="careers.html">CAREERS</a>
+    </div>
+<div id = "banner">
+    <img src = "imgs\burger2.png" alt = "burger">
+</div>
+<section class = "container">
+    <div class = "column left">
+        <h2>Come Find Us!</h2>
+        123 Burger Lane<br>
+        North Sioux Falls, SD 57107<br>
+        (123) 456-7890<br>
+        theburgerjoint@gmail.com<br>
+        Open 11am - 9pm Mon-Sat<br>
+        Closed Sundays<br>
+    </div>
+    <div class = "column right">
+        <h2>Our Socials:</h2>
+        Facebook: @theburgerjoint<br>
+        Instagram: @theburgerjoint<br>
+        Twitter: @theburgerjoint<br>
+        TikTok: @theburgerjoint<br>
+        YouTube: @theburgerjoint<br>
+        Yelp: @theburgerjoint<br>
+    </div>
+</section>
+<div class = "specials">
+    <h2>Our weekly Specials:</h2>
+    <p>Grilled Cheese Patty Melt - $5.99</p>
+        <img src = "imgs\patty.webp" alt = "patty melt">
+    <p>Pretzel Bun Deluxe Burger - $5.99</p>
+        <img src = "imgs\pretzel.webp" alt = "pretzel burger">
+    <p>Mushroom Soup - $3.99</p>
+        <img src = "imgs\soup.jpg" alt = "soup">
+    <p> </p>
+    <h2>Free Refills on all Large Drinks!</h2>
+</div>
+<div id="footer">
+    <p>&copy; 2025 The Burger Joint</p>
+</div>
+<script>
+    function toggleMenu()
+    {
+      const navLinks = document.querySelector('.nav');
+      const hamburger = document.querySelector('.nav-toggle');
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
