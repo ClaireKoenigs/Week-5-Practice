@@ -54,22 +54,34 @@ h1 {
 }
 
 @media (max-width: 700px) {
-    /* Keep the main nav visible on small screens and hide the hamburger toggle */
     #nav-toggle {
-        display: none;
+        display: block;
     }
 
-    /* Keep the nav displayed as a horizontal bar on mobile as well */
     #nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px;
+    }
+
+    #nav.show {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.75rem;
-        padding: 10px 12px;
+        position: absolute;
+        top: 64px; /* below header */
+        right: 12px;
+        left: 12px;
+        background-color: #333;
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        padding: 12px;
+        gap: 8px;
     }
 
     #nav a {
         padding: 12px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        text-align: center;
     }
 
 }

@@ -54,25 +54,11 @@
 </div>
 <script>
     const toggleButton = document.getElementById("nav-toggle");
-    const nav = document.getElementById("nav");
+const nav = document.getElementById("nav");
 
-    toggleButton.setAttribute('aria-controls', 'nav');
-    toggleButton.setAttribute('aria-expanded', 'false');
-
-    toggleButton.addEventListener("click", function () {
-        const isOpen = nav.classList.toggle("show");
-        toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    const links = nav.querySelectorAll('a');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('show')) {
-                nav.classList.remove('show');
-                toggleButton.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
+toggleButton.addEventListener("click", function () {
+    nav.classList.toggle("show");
+});
 </script>
 </body>
 </html>
