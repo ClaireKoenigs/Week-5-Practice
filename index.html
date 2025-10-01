@@ -53,12 +53,53 @@
     <p>&copy; 2025 The Burger Joint</p>
 </div>
 <script>
-    const toggleButton = document.getElementById("nav-toggle");
-const nav = document.getElementById("nav");
+    const toggleButton = document.getElementById('nav-toggle');
+    const nav = document.getElementById('nav');
+    const navLinks = nav.querySelectorAll('a');
 
-toggleButton.addEventListener("click", function () {
-    nav.classList.toggle("show");
-});
+    // Accessibility attributes
+    toggleButton.setAttribute('aria-controls', 'nav');
+    toggleButton.setAttribute('aria-expanded', 'false');
+    toggleButton.setAttribute('aria-label', 'Toggle navigation');
+
+    function openNav() {
+        nav.classList.add('show');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        // focus first link for keyboard users
+        if (navLinks.length) navLinks[0].focus();
+    }
+
+    function closeNav() {
+        nav.classList.remove('show');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.focus();
+    }
+
+    toggleButton.addEventListener('click', () => {
+        if (nav.classList.contains('show')) closeNav();
+        else openNav();
+    });
+
+    // Close when a link is clicked (mobile behavior)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('show')) closeNav();
+        });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('show')) {
+            closeNav();
+        }
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && e.target !== toggleButton && nav.classList.contains('show')) {
+            closeNav();
+        }
+    });
 </script>
 </body>
 </html>
